@@ -34,7 +34,7 @@ class MicrosoftTeams extends FlowPlugin {
 
         TeamsMessageSender sender = new TeamsMessageSender(webhookUrl)
 
-        sender.sendMessage('{"text": "' + StringEscapeUtils.escapeJava(message) + '"}')
+        sender.sendMessage('{"text": "' + StringEscapeUtils.escapeJava(message) + '", "TextFormat":"markdown"}')
 
         sr.apply()
     }
