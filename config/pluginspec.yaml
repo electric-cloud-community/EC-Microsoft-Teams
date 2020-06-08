@@ -1,0 +1,38 @@
+pluginInfo:
+  # This is default sample specification
+  # Feel free to change it
+  # Call flowpdk showdoc pluginspec to see the list of available fields and their description
+  pluginName: 'EC-Microsoft-Teams'
+  version: '1.0.0'
+  description: 'Plugin which sends messages to Microsoft Teams channels'
+  author: 'Jean-Philippe Briend'
+  supportUrl: 'none'
+  category: 'Notification'
+  shell: 'ec-groovy'
+
+# Plugin configuration description
+configuration:
+  # This is a shell used for checking connection
+  shell: 'ec-groovy'
+  # A script for checking connection will be generated
+  checkConnection: 'false'
+  # A set of fields will be added to process debug level in the configuration
+  hasDebugLevel: true
+  parameters:
+
+procedures:
+- name: 'Send Message'
+  description: 'Send a Message to a Microsoft Teams channel'
+  hasConfig: true
+  parameters:
+  - name: webhookUrl
+    documentation: Incoming Webhook URL created in Microsoft Teams
+    required: true
+    type: entry
+    label: Webhook URL
+  - name: message
+    documentation: Message to send
+    required: true
+    type: textarea
+    label: Message
+  outputParameters:
