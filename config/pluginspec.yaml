@@ -23,7 +23,7 @@ configuration:
 procedures:
 - name: 'Send Message'
   description: 'Send a Message to a Microsoft Teams channel'
-  hasConfig: true
+  hasConfig: false
   parameters:
   - name: webhookUrl
     documentation: Incoming Webhook URL created in Microsoft Teams
