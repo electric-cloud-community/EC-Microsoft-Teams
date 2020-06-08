@@ -1,4 +1,5 @@
 import com.cloudbees.flowpdf.*
+import groovy.json.StringEscapeUtils
 import com.cloudbees.flow.examples.plugin.*
 
 /**
@@ -29,11 +30,11 @@ class MicrosoftTeams extends FlowPlugin {
         Context context = getContext()
 
         def webhookUrl = p.getRequiredParameter('webhookUrl').getValue()
-        def message = p.getRequiredParameter('message').getValue()
+        String message = p.getRequiredParameter('message').getValue()
 
         TeamsMessageSender sender = new TeamsMessageSender(webhookUrl)
 
-        sender.sendMessage(message)
+        sender.sendMessage('{"text": "' + StringEscapeUtils.escapeJava(message) + '"}')
 
         sr.apply()
     }
