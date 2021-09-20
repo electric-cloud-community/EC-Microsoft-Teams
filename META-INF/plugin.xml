@@ -6,7 +6,7 @@
   <category>Notification</category>
   <description>Plugin which sends messages to Microsoft Teams channels</description>
   <configure>ec_config</configure>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <authorUrl>none</authorUrl>
   <help>help.xml</help>
   <depends min='1.4.1'>EC-PluginManager</depends>

@@ -3,7 +3,7 @@ pluginInfo:
   # Feel free to change it
   # Call flowpdk showdoc pluginspec to see the list of available fields and their description
   pluginName: 'EC-Microsoft-Teams'
-  version: '1.0.0'
+  version: '1.0.1'
   description: 'Plugin which sends messages to Microsoft Teams channels'
   author: 'Jean-Philippe Briend'
   supportUrl: 'none'
@@ -19,11 +19,31 @@ configuration:
   # A set of fields will be added to process debug level in the configuration
   hasDebugLevel: true
   parameters:
+    - name: config
+      documentation: The name for the created configuration
+      required: true
+      type: entry
+      label: Configuration Name
+    - name: proxyHost
+      documentation: Hostname (or IP) of the Proxy
+      required: false
+      type: entry
+      label: Proxy hostname/IP
+    - name: proxyPort
+      documentation: Port of the Proxy
+      required: false
+      type: entry
+      label: Proxy port
+    - name: credential
+      documentation: Credential to access the Proxy
+      required: false
+      type: credential
+      label: Credential
 
 procedures:
 - name: 'Send Message'
   description: 'Send a Message to a Microsoft Teams channel'
-  hasConfig: false
+  hasConfig: true
   parameters:
   - name: webhookUrl
     documentation: Incoming Webhook URL created in Microsoft Teams

@@ -1,5 +1,5 @@
 // This procedure.dsl was generated automatically
-// DO NOT EDIT THIS BLOCK === procedure_autogen starts ===
+// DO NOT EDIT THIS BLOCK BELOW=== procedure_autogen starts ===
 procedure 'Send Message', description: '''Send a Message to a Microsoft Teams channel''', {
 
     // Handling binary dependencies
@@ -21,7 +21,7 @@ procedure 'Send Message', description: '''Send a Message to a Microsoft Teams ch
 
         postProcessor = '''$[/myProject/perl/postpLoader]'''
     }
-// DO NOT EDIT THIS BLOCK === procedure_autogen ends, checksum: b3e9623bd45d5df6ebccc7bbc61753b8 ===
+// DO NOT EDIT THIS BLOCK ABOVE ^^^=== procedure_autogen ends, checksum: b3e9623bd45d5df6ebccc7bbc61753b8 ===
 // Do not update the code above the line
 // procedure properties declaration can be placed in here, like
 // property 'property name', value: "value"

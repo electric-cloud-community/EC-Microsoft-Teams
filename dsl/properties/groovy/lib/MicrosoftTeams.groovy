@@ -26,13 +26,22 @@ class MicrosoftTeams extends FlowPlugin {
     
     */
     def sendMessage(StepParameters p, StepResult sr) {
-
         Context context = getContext()
+        def config = context.getConfigValues()
 
         def webhookUrl = p.getRequiredParameter('webhookUrl').getValue()
         String message = p.getRequiredParameter('message').getValue()
 
         TeamsMessageSender sender = new TeamsMessageSender(webhookUrl)
+
+        // Add Proxy configuration if specified at Plugin Configuration level
+        if (config.getRequiredParameter('proxyHost').getValue()?.trim()) {
+            def credential = config.getRequiredCredential('credential')
+            sender.addProxy(config.getRequiredParameter('proxyHost').getValue(),
+                    config.getRequiredParameter('proxyPort').getValue(),
+                    credential.getUserName(),
+                    credential.getSecretValue())
+        }
 
         sender.sendMessage('{"text": "' + StringEscapeUtils.escapeJava(message) + '", "TextFormat":"markdown"}')
 
