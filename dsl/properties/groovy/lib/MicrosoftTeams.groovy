@@ -35,7 +35,7 @@ class MicrosoftTeams extends FlowPlugin {
         TeamsMessageSender sender = new TeamsMessageSender(webhookUrl)
 
         // Add Proxy configuration if specified at Plugin Configuration level
-        if (config.getRequiredParameter('proxyHost').getValue()?.trim()) {
+        if (config.getParameter('proxyHost')?.getValue()) {
             def credential = config.getRequiredCredential('credential')
             sender.addProxy(config.getRequiredParameter('proxyHost').getValue(),
                     config.getRequiredParameter('proxyPort').getValue(),

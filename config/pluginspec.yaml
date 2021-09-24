@@ -3,7 +3,7 @@ pluginInfo:
   # Feel free to change it
   # Call flowpdk showdoc pluginspec to see the list of available fields and their description
   pluginName: 'EC-Microsoft-Teams'
-  version: '1.0.1'
+  version: '1.0.2'
   description: 'Plugin which sends messages to Microsoft Teams channels'
   author: 'Jean-Philippe Briend'
   supportUrl: 'none'
